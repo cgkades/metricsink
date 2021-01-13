@@ -16,7 +16,15 @@ var _ v2.MetricsServiceServer = &server{}
 
 // New ...
 func New() v2.MetricsServiceServer {
-	return &server{}
+	return &server{
+		marshaler: jsonpb.Marshaler{
+			EnumsAsInts:  false,
+			EmitDefaults: false,
+			Indent:       "",
+			OrigName:     false,
+			AnyResolver:  nil,
+		},
+	}
 }
 
 func (s *server) StreamMetrics(stream v2.MetricsService_StreamMetricsServer) error {

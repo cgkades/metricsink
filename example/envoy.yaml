@@ -42,7 +42,7 @@ static_resources:
   clusters:
   - name: service_stats
     connect_timeout: 5s
-    type: LOGICAL_DNS
+    type: STATIC
     http2_protocol_options: {}
     # Comment out the following line to test on v6 networks
     dns_lookup_family: V4_ONLY
@@ -54,7 +54,7 @@ static_resources:
         - endpoint:
             address:
               socket_address:
-                address: sink
+                address: 127.0.0.1
                 port_value: 9001
 
   - name: service_google

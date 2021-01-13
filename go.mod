@@ -1,5 +1,7 @@
 module github.com/dio/metricsink
 
+go 1.15
+
 require (
 	github.com/envoyproxy/go-control-plane v0.6.7
 	github.com/gogo/protobuf v1.2.1 // indirect
